@@ -6,7 +6,7 @@ namespace Player
 {
     public class InnerJelly : MonoBehaviour
     {
-        private const float MAX_POS = 0.0749f;
+        private const float MAX_POS = 0.1f;
         private const float BOUNCE_BACK_SPEED_MOD = 2;
 
         Transform parent;
