@@ -4,7 +4,7 @@ namespace Player
 {
     public class Movement : MonoBehaviour
     {
-        public float speed = 1;
+        public float speed = 3;
         Vector3 position;
 
         void FixedUpdate()
