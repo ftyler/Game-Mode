@@ -18,18 +18,14 @@ namespace Eventing
         {
             Movement player = other.GetComponent<Movement>();
             if (player != null)
-            {
                 parent.AuraOn();
-            }
         }
 
         private void OnTriggerExit(Collider other)
         {
             Movement player = other.GetComponent<Movement>();
             if (player != null)
-            {
                 parent.AuraOff();
-            }
         }
     }
 }
