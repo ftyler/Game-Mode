@@ -6,14 +6,18 @@ namespace Player
 {
     public class InnerJelly : MonoBehaviour
     {
+        // Constants
         private const float MAX_POS = 0.1f;
+        private const float MOVE_DELTA = 0.01f;
         private const float BOUNCE_BACK_SPEED_MOD = 2;
 
+        // Parent Jelly vars
         Transform parent;
         Vector3 parentPosition;
         Vector3 parentVelocity;
 
-        public float speed = 5;
+        // Inner Jelly vars
+        float speed = 5;
         Vector3 position;
 
         private void Start()
@@ -37,11 +41,11 @@ namespace Player
             parentPosition = parent.localPosition;
 
             // Get new position based on parent's motion
-            if (parentVelocity.x == 0)
+            if (Mathf.Abs(parentVelocity.x) <= MOVE_DELTA)
                 position.x -= Time.deltaTime * position.x * speed * BOUNCE_BACK_SPEED_MOD;
             else
                 position.x -= parentVelocity.x * Time.deltaTime * speed;
-            if (parentVelocity.z == 0)
+            if (Mathf.Abs(parentVelocity.z) <= MOVE_DELTA)
                 position.z -= Time.deltaTime * position.z * speed * BOUNCE_BACK_SPEED_MOD;
             else
                 position.z -= parentVelocity.z * Time.deltaTime * speed;
