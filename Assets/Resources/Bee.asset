@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Bee
   m_EditorClassIdentifier: 
   description: 
-  power: 3
+  power: 4
   beanValue: 0
+  gameObject: {fileID: 0}

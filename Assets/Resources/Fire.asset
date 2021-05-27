@@ -13,3 +13,6 @@ MonoBehaviour:
   m_Name: Fire
   m_EditorClassIdentifier: 
   description: 
+  power: 1
+  beanValue: 0
+  gameObject: {fileID: 0}

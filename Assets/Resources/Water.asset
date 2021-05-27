@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Water
   m_EditorClassIdentifier: 
   description: 
-  power: 1
+  power: 2
   beanValue: 0
+  gameObject: {fileID: 0}
