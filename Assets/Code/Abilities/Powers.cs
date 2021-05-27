@@ -8,6 +8,7 @@ namespace Abilities
     {
         public enum jellyPowers
         {
+            None,
             Flamin,
             H20,
             Hardened,

@@ -16,7 +16,7 @@ namespace Eventing
 
         private void OnTriggerEnter(Collider other)
         {
-            Movement player = other.GetComponent<Movement>();
+            Stats player = other.GetComponent<Stats>();
             if (player != null)
                 parent.AuraOn();
         }
