@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Juju Berry
   m_EditorClassIdentifier: 
   description: 
-  power: 6
+  power: 7
   beanValue: 0
+  gameObject: {fileID: 0}

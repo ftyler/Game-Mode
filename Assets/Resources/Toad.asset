@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Toad
   m_EditorClassIdentifier: 
   description: 
-  power: 4
+  power: 5
   beanValue: 0
+  gameObject: {fileID: 0}

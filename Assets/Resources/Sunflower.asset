@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Sunflower
   m_EditorClassIdentifier: 
   description: 
-  power: 5
+  power: 6
   beanValue: 0
+  gameObject: {fileID: 0}

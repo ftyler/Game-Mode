@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Metal Ore
   m_EditorClassIdentifier: 
   description: 
-  power: 2
+  power: 3
   beanValue: 0
+  gameObject: {fileID: 0}
