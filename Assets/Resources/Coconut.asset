@@ -15,4 +15,6 @@ MonoBehaviour:
   description: 
   power: 7
   beanValue: 0
-  gameObject: {fileID: 0}
+  gameObject: {fileID: 6820021054459707709, guid: 0ee5e6142a3a84c1d8ecb38ef3bea31d,
+    type: 3}
+  offset: {x: -0.425, y: -0.425, z: 0.425}

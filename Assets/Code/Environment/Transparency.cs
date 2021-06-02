@@ -7,27 +7,32 @@ namespace Environment
     public class Transparency : MonoBehaviour
     {
         // Constants
-        private const float HIDE_DISTANCE = 8f;
+        private const float LR_HIDE_DISTANCE = 3f;
+        private const float FB_HIDE_DISTANCE = 6f;
         private const float TRANSPARENCY_LEVEL = 0.25f;
 
         Camera cam;
-        public float cameraDistance;
+        public Vector2 cameraDistance;
         public Renderer[] renderers;
+        public float width;
 
         private void Start()
         {
             // Get reference to main camera
             cam = Camera.main;
+            cameraDistance = new Vector2();
             renderers = GetComponentsInChildren<Renderer>();
         }
 
         void Update()
         {
             // Get current distance from camera
-            cameraDistance = (transform.position - cam.transform.position).magnitude;
+            cameraDistance.x = transform.position.x - cam.transform.position.x;
+            cameraDistance.x = Mathf.Abs(cameraDistance.x) + (width/2 * Mathf.Sign(cameraDistance.x));
+            cameraDistance.y = Mathf.Abs(transform.position.z - cam.transform.position.z);
 
             // Set transparency of each game object depending on distance
-            if (cameraDistance <= HIDE_DISTANCE)
+            if (cameraDistance.x <= LR_HIDE_DISTANCE && cameraDistance.y <= FB_HIDE_DISTANCE)
             {
                 foreach (Renderer renderer in renderers)
                 {

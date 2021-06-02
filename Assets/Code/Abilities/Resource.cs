@@ -12,5 +12,6 @@ namespace Abilities
         public Powers.jellyPowers power;
         public int beanValue;
         public GameObject gameObject;
+        public Vector3 offset = new Vector3(-0.425f, -0.425f, 0.425f);
     }
 }

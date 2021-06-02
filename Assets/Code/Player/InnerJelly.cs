@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Abilities;
 
 namespace Player
 {
@@ -19,6 +20,7 @@ namespace Player
         // Inner Jelly vars
         float speed = 5;
         Vector3 position;
+        GameObject heldResource;
 
         private void Start()
         {
@@ -58,6 +60,35 @@ namespace Player
 
             // Apply movement
             transform.localPosition = position;
+        }
+
+        public void UpdateAppearance(Resource currResource)
+        {
+            // Destroy any instance of previously held resource
+            if (heldResource != null)
+                GameObject.Destroy(heldResource);
+
+            // Show held resource or inner jelly
+            if (currResource == null)
+            {
+                // Show inner jelly
+                Renderer renderer = GetComponent<Renderer>();
+                renderer.enabled = true;
+            }
+            else
+            {
+                // Hide inner jelly
+                Renderer renderer = GetComponent<Renderer>();
+                renderer.enabled = false;
+
+                // Create new instance of the resource's object
+                heldResource = GameObject.Instantiate(currResource.gameObject);
+                heldResource.transform.parent = gameObject.transform;
+                // Modify scripts for new purpose
+                GameObject.Destroy(heldResource.GetComponent<AbsorbableObject>());
+                // Set starting position
+                heldResource.transform.localPosition = currResource.offset;
+            }
         }
     }
 }
